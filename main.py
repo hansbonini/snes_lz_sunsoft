@@ -4,7 +4,7 @@ import argparse
 import sys
 import textwrap
 from os import SEEK_CUR, SEEK_END, SEEK_SET
-from romhacking.common import TBL, Palette, Tiles
+from romhacking.common import TBL
 from snes.common import ROM
 from snes.data_compression import *
 
