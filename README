@@ -1,0 +1,13 @@
+[SNES] Sunsoft Compressor / Decompressor
+----------------------------------------------
+Tool for extract images from games developed
+by Sunsoft and using LZ algorithm
+----------------------------------------------
+List of know compatible games;
+    - [SNES] Sugoi Ebereke
+    - [SNES] Pirates of Dark Water
+----------------------------------------------
+For decompress:
+    python main.py D rom decompressed_file offset
+For compress:
+    python main.py C rom decompressed_file offset_to_be_inserted_in_rom
