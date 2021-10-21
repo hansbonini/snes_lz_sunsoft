@@ -327,7 +327,7 @@ class LZSS(Compression):
             # Probe all possible chains
             for probed_chains in range(possible_chains):
                 index = temp_window.find(search, last_ocurrence)
-                last_ocurrence = index
+                last_ocurrence = index+1
                 match = b''
                 for x in range(len(search)):
                     match += self._window.get(index+x).to_bytes(1, 'big')

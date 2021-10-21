@@ -9,7 +9,7 @@ class SUNSOFT(LZSS):
 
         Games where this compression is found:
         [SNES] Sugoi Hebereke
-
+        [SNES] Pirates of Dark Water
     """
 
     def __init__(self, input_data):
@@ -21,6 +21,7 @@ class SUNSOFT(LZSS):
         self._window = RingBuffer(0x1000, 0xFEE, 0x00)
         self._buffer = bytearray()
         compressed_size = self.DATA.read_16()
+        print(hex(compressed_size))
         while (compressed_size > 0):
             control = self.DATA.read_8()
             compressed_size-=1
@@ -73,8 +74,8 @@ class SUNSOFT(LZSS):
                 self._encoded += 1
             bitcount += 1
         compressed_size = len(self._output)-2
-        self._output[0]=compressed_size >> 8
-        self._output[1]=compressed_size &0xFF
+        self._output[1]=compressed_size >> 8
+        self._output[0]=compressed_size &0xFF
         return self._output
 
     def write_command_bit(self, bitcount, bitflag):
